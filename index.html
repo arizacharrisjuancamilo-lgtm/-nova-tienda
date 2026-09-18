@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111"><title>NOVA | Tienda urbana</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="announcement">ENVÍOS A TODA COLOMBIA · COMPRA SEGURA · NOVA</div>
+<header>
+  <a class="brand" href="#home">NOVA<small>EST. 2026</small></a>
+  <button class="hamb" onclick="toggleNav()">☰</button>
+  <nav id="nav"><a href="#home">Inicio</a><a href="#shop">Tienda</a><a href="#categories">Categorías</a><a href="#about">Nosotros</a><a href="#contact">Contacto</a></nav>
+  <div class="actions"><button onclick="focusSearch()">⌕</button><button onclick="openCart()">🛒 <b id="count">0</b></button></div>
+</header>
+
+<main id="home">
+<section class="hero">
+ <div><span class="eyebrow">NUEVA COLECCIÓN</span><h1>NOVA</h1><p>Estilo urbano. Calidad. Actitud.</p><a href="#shop" class="btn white">EXPLORAR COLECCIÓN →</a></div>
+ <div class="hero-visual"><span>NOVA</span></div>
+</section>
+
+<section id="categories" class="cat-grid">
+ <button onclick="setCat('Camisetas')"><span>01</span><strong>CAMISETAS</strong><small>Explorar →</small></button>
+ <button onclick="setCat('Buzos')"><span>02</span><strong>BUZOS</strong><small>Explorar →</small></button>
+ <button onclick="setCat('Pantalones')"><span>03</span><strong>PANTALONES</strong><small>Explorar →</small></button>
+ <button onclick="setCat('Gorras')"><span>04</span><strong>GORRAS</strong><small>Explorar →</small></button>
+ <button onclick="setCat('Tenis')"><span>05</span><strong>TENIS</strong><small>Explorar →</small></button>
+</section>
+
+<section id="shop" class="shop">
+ <div class="shop-head"><div><span class="eyebrow dark">NOVA SHOP</span><h2>Compra tu estilo</h2></div>
+ <div class="filters"><input id="search" placeholder="Buscar..." oninput="render()"><select id="cat" onchange="render()"><option>Todos</option><option>Camisetas</option><option>Buzos</option><option>Pantalones</option><option>Gorras</option><option>Tenis</option></select></div></div>
+ <div id="grid" class="grid"></div>
+</section>
+
+<section class="perks"><div>🚚<b>Envíos nacionales</b><small>2–5 días hábiles</small></div><div>🔒<b>Compra segura</b><small>Proceso protegido</small></div><div>💳<b>Pago flexible</b><small>Contra entrega según zona</small></div><div>💬<b>Soporte</b><small>WhatsApp</small></div></section>
+
+<section id="about" class="about"><span class="eyebrow dark">NUESTRA ESENCIA</span><h2>Más que ropa.</h2><p>NOVA nace para ofrecer prendas urbanas fáciles de combinar, con una identidad limpia y contemporánea. Esta versión es una demo: reemplaza productos, fotos, precios y datos de contacto por los de tu negocio antes de publicar.</p></section>
+</main>
+
+<footer id="contact"><div class="brand">NOVA<small>EST. 2026</small></div><div><b>Explora</b><a href="#shop">Tienda</a><a href="#categories">Categorías</a><a href="#about">Nosotros</a></div><div><b>Contacto</b><a href="https://wa.me/573000000000">WhatsApp</a><a href="mailto:hola@novastore.co">hola@novastore.co</a><span>Barranquilla, Colombia</span></div><div><b>Administración</b><button class="admin-link" onclick="openAdmin()">Panel de productos</button></div><small class="copy">© 2026 NOVA · Demo de comercio electrónico</small></footer>
+
+<a class="wa" href="https://wa.me/573000000000?text=Hola%20NOVA%2C%20quiero%20hacer%20un%20pedido." target="_blank">WhatsApp</a>
+
+<div id="modal" class="modal" onclick="if(event.target===this)closeModal()"><div class="modal-card" id="modalBody"></div></div>
+<aside id="drawer" class="drawer"><div class="drawer-head"><h2>Carrito</h2><button onclick="closeCart()">×</button></div><div id="items"></div><div class="sum"><span>Total</span><b id="total">$0</b></div><button class="btn black" onclick="checkout()">Continuar al pedido →</button></aside>
+<div id="shade" class="shade" onclick="closeCart()"></div>
+
+<script src="script.js"></script>
+</body></html>
